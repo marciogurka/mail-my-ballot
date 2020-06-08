@@ -49,6 +49,7 @@ const toTemplate = (state: ImplementedState): string => {
     case 'Nevada': return 'Nevada.md'
     case 'New York': return 'NewYork.md'
     case 'Wisconsin': return 'Wisconsin.md'
+    case 'Wyoming': return 'Wyoming.md'
   }
 }
 
