@@ -5,6 +5,6 @@
 {% block body %}
 - County: **{{county}}**
 - Elections: **{{election}}**
-- Affirmation: Per the requirements: I am affirming that I am eligible to vote in the election
+- Affirmation: I am eligible to vote in the election
 
 {% endblock %}
