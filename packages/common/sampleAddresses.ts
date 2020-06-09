@@ -199,7 +199,7 @@ export const sampleAddresses: Record<ImplementedState, AddressData[]> = {
   }, {
     address: '800 S 3rd St, Laramie, WY 82070',
     city: 'Laramie',
-    county: 'Laramie County',
+    county: 'Albany County',
     state: 'Wyoming',
   }]
 }
