@@ -1,6 +1,6 @@
-import { cache } from './util'
 import { getMichiganContact } from './contact'
-import { rawGeocode, toAddress } from './gm'
+import { cacheGeocode, toAddress } from './gm'
+import { testEach } from './utilTests'
 
 // from: https://en.wikipedia.org/wiki/List_of_municipalities_in_Michigan
 const addresses: [string, string][] = [
@@ -67,11 +67,11 @@ const addresses: [string, string][] = [
   ['21385 Glen Lodge Rd, Ferndale, MI 48220, USA', 'Royal Oak Township:Oakland County']
 ]
 
-test.each(addresses)(
+testEach(addresses)(
   'Checking Michigan Geocoding %s',
   async (addr, locality) => {
     // This function breaks up geocoding into it's parts so that we can cache and get errMsg
-    const geoResult = await cache(rawGeocode)(addr)
+    const geoResult = await cacheGeocode(addr)
     expect(geoResult).toBeTruthy()
     const errMsg = `Google Result was ${JSON.stringify(geoResult?.address_components, null, 2)}`
   
